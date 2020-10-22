@@ -12,7 +12,7 @@ common:
 build:
 	@docker build . -t $(tag):$(version)
 run:
-	@docker run --rm -it --name $(tag) -p 8080:80 --volume=mysqldata:/var/lib/mysql --mount type=bind,source=$(CUR_DIR)/src,target=/var/www/html/ $(tag):$(version)
+	@docker run --rm -it --name $(tag) -p 8080:80 --volume=mysqldata$(tag):/var/lib/mysql --mount type=bind,source=$(CUR_DIR)/src,target=/var/www/html/ $(tag):$(version)
 setup:
 	@docker volume create --name mysqldata$(tag)
 firstrun:
