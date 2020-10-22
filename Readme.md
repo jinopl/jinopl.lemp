@@ -2,6 +2,8 @@
 
 **Development ready LEMP docker setup**
 
+![Docker](https://github.com/jinopl/jinopl.lemp/workflows/Docker/badge.svg?branch=main)
+
 
  - Clone this project and put project files in src folder.
  - For first time Run `make firstrun`
