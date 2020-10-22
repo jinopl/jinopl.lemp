@@ -1,10 +1,10 @@
 FROM bitnami/minideb:stretch
 LABEL Author="Jino PL"
 
-RUN install_packages nginx mysql-server php-fpm php-mysql
+RUN install_packages nginx mysql-server php-fpm php-mysql curl ca-certificates
 
 EXPOSE 80
-COPY scripts/php-config.conf /etc/nginx/conf.d/php-config.conf
+COPY scripts/local_site /etc/nginx/sites-available/local_site
 COPY scripts/init.sh /init.sh
 RUN chmod +x /init.sh
 ENTRYPOINT [ "/init.sh" ]
